@@ -1,43 +1,118 @@
-.PHONY: help
+# Définition des variables
+NODE_PATH := ../../node_modules/.bin
+BUILD_DIR := ../build
+SRC_DIR := src
+DATA_DIR := data
+SRV_DIR := srv
+USER_DIR := user
+DOCS_DIR := docs
+MODELS_DIR := models
 
-all: npm-install npm-start
+NODE_APP = index.js
 
-build:
-	@npm run build
+menu :
+	@echo "Welcom To cycliq Economical system."
+	@echo""
+	@echo"╔═════════════════════════════════════╗     ╔═════════════════════════════════════════════════════════════════════╗"
+	@echo"╠═══════════ ✨ Pi Console ═══════════╣     ║  [💫] [💬] [📚] [🌌] [✨] [⚡️] [💰] [🌴] [📱] [📡]              [🛰]║"
+	@echo"║                                     ║     ╠═════════════════════════════════════════════════════════════════════╣"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"║                                     ║     ║                                                                     ║"
+	@echo"╠═════════════════════════════════════╣     ╠═════════════════════════════════════════════════════════════════════╣"
+	@echo"║(∏)                                  ║     ║[💻.📱]:/<                                                        /%>║"
+	@echo"╚═════════════════════════════════════╝     ╚═════════════════════════════════════════════════════════════════════╝"	
+	@echo""
 
-deploy:
-	@npm run deploy
+MAGIC_TARGETS := codex build rep file script clean
 
-npm-install:
-	@npm install
+all: $(MAGIC_TARGETS)
 
-npm-start:
+srv : run start
+
+start:
 	@npm start
+run:
+	@node ./srv/srv.js
 
-npm-test:
-	@npm test
+update:
+	@echo "✨ Mise en état du dossier sur github✨"
+	@git add .
+	@git commit -m "UP"
+	@git push
+	@echo "✨ Mise à jour terminée✨"
 
-npm-build:
-	@npm run build
+session1:
+	@echo "✨ Mise en état du dossier sur github✨"
+	@git add .
+	@git commit -m "addSession+date"
+	@git push
+	@echo "✨ Mise à jour terminée✨"
 
-npm-deploy:
-	@npm run deploy
+init: gantt phase1 phase2 phase3 phase4 phase5 phase6 phase7 phase8
+# Magic COMPILER groq quantum
+gantt:
+	@echo "initialisation de l'instance"
+	@git clone auto
 
-help:
-	@echo "Makefile for Brainstorming Session"
-	@echo "_"
-	@echo "#=================================================="
-	@echo "# Available targets:                              #"                             
-	@echo "#  all              Build and start the project   #"
-	@echo "#  build            Build the project             #"
-	@echo "#  deploy           Deploy the project            #"
-	@echo "#  npm-install      Install dependencies          #"
-	@echo "#  npm-start        Start the project             #"
-	@echo "#  npm-test         Test the project              #"
-	@echo "#  npm-build        Build the project             #"
-	@echo "#  npm-deploy       Deploy the project            #"
-	@echo "#_________________________________________________#"
-	@echo "#                                                 #"
-	@echo "#ps1:                                             #"
-	@echo "#                                                 #"
-	@echo "#_________________________________________________#"
+phase1:
+	@echo "phase de conception"
+	@node mission.js
+
+phase2:
+	@echo "phase de configuration"
+	@node configuration.js
+
+phase3:
+	@echo "phase d'entrainnement du model IA"
+	@node models.js
+
+phase4:
+	@echo "phase de gestion et iteration du frontend"
+	@git clone src.js
+	
+phase5:
+	@echo "phase de gestion et iteration du backend"
+	@node srv.js
+
+
+phase6:
+	@echo "phase de test et debugage"
+	@node data.js
+
+phase7:
+	@echo "phase de validation documentation"
+	@node models/modelcss.js
+
+phase8:
+	@echo "phase d'affiliation et contribution"
+	@node models/modelcss.js
+
+server:
+	@node srv/Telegram/server.js
+	@echo "Unleashing quantum Magic Mafile with every script we shape" 
+# Ouvrez-vous aux dimensions cachées
+clean-r:
+	@echo "Returning the quantum realm to pristine state"
+	@rm -rf data/* build/* src/* data/*
+
+clean-R:
+	@echo "Unweaving the fabric, a celestial fate"@rm -rf output/ build/ src/ data/
+
+clean: clean-r clean-R
