@@ -1,0 +1,85 @@
+{
+  "name": "android",
+  "version": "0.1.0",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "dev": "next dev",
+    "style": "sass --watch src/scss/device.scss src/css/style.css",
+    "start": "electron .",
+    "build": "node ./build.js",
+    "Next": "next start",
+    "lint": "next lint"
+  },
+  "Mistral": {
+    "model": "mixtral-8x7b-32768",
+    "temperature": 0.5,
+    "max_tokens": "4096",
+    "top_p": "1",
+    "stream": "True",
+    "stop": "None"
+  },
+  "llma": {
+    "model": "llama3-8b-8192",
+    "temperature": 0.5,
+    "max_tokens": "4096",
+    "top_p": "1",
+    "stream": "True",
+    "stop": "None"
+  },
+  "gemma": {
+    "model": "gemma-7b-it",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "temperature": 0.5,
+    "max_tokens": "4096",
+    "top_p": "1",
+    "stream": "True",
+    "stop": "None"
+  },
+  "gpt": {
+    "model": "gpt-4o",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "temperature": 0.5,
+    "max_tokens": "4096",
+    "top_p": "1",
+    "stream": "True",
+    "stop": "None"
+  },
+  "dependencies": {
+    "@influxdata/influxdb-client": "^1.35.0",
+    "axios": "^1.7.7",
+    "electron": "^32.0.1",
+    "electron-packager": "^17.1.2",
+    "express": "^4.19.2",
+    "groq-sdk": "^0.7.0",
+    "inquirer": "^10.2.0",
+    "markdownlint": "^0.35.0",
+    "next": "^14.2.6",
+    "node-emoji": "^2.1.3",
+    "node-hid": "^3.1.0",
+    "npx": "^10.2.2",
+    "openai": "^4.58.1",
+    "p5": "^1.10.0",
+    "path-browserify": "^1.0.1",
+    "pytorch": "^0.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18",
+    "remark": "^15.0.1",
+    "sass": "^1.78.0",
+    "telegraf": "^4.16.3",
+    "tone": "^15.0.4",
+    "transformer": "^1.2.8",
+    "webpack": "^5.94.0"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.12",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.6",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

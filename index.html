@@ -2,257 +2,88 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>about</title>
-    <!-- Dans la section <head> -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="src/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessions de Brainstorming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        section {
+            margin-bottom: 60px;
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .timestamp {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <header>
-      <div class="0[💫]">
-      <button class="btn picker" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-        💫
-      </button>
-      </div>
-        <div class="1">
-            <button type="button" class="btn btn-primary picker" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            💬
-            </button>
-        </div>
-        <div class="2">
-            <button type="button" class="btn btn-primary picker" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-        📔
-            </button>
-        </div>
-        <div class="3">
-            <button type="button" class="btn btn-primary picker" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-        🌌
-            </button>
-        </div>
-        <div class="4">
-            <button type="button" class="btn btn-primary picker" data-bs-toggle="modal" data-bs-target="#exampleModal4">
-        📚
-            </button>    
-        </div>
-        <div class="5">
-            <button type="button" class="btn btn-primary picker" data-bs-toggle="modal" data-bs-target="#exampleModal5">
-        🏗️
-            </button> 
-        </div>
-        <div class="6">
-            <button type="button" class="btn btn-primary picker" data-bs-toggle="modal" data-bs-target="#exampleModal6">
-        💰
-        </button> 
-        </div>
-        <div class="7">
-            <button type="button" class="btn btn-primary picker" data-bs-toggle="modal" data-bs-target="#exampleModal7">
-        ✨
-        </button> 
-        </div>
 
+<header>
+    <h1>Sessions de Brainstorming - Intent.json</h1>
+    <p>Bienvenue sur la page dédiée à mes différentes sessions de brainstorming. Les sessions sont documentées avec un lien vers les commits GitHub, ainsi que les prompts générés.</p>
+</header>
 
-  <!-- Modal 💬 -->
+<!-- Les sections seront générées dynamiquement en fonction du contenu de workplan.json -->
+<div id="sessions"></div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal 💬</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
+<footer>
+    <h2>Me Contacter</h2>
+    <div class="social-links">
+        <a href="https://www.facebook.com/ton-profil">Facebook</a> |
+        <a href="https://www.youtube.com/ton-profil">YouTube</a> |
+        <a href="https://www.google.com/ton-profil">Google</a> |
+        <a href="https://www.linkedin.com/in/ton-profil">LinkedIn</a>
     </div>
-  </div>
+</footer>
 
-<!-- slidbar📔 -->
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem alias sit saepe temporibus, corrupti voluptas ea porro voluptates assumenda dolorum illo hic vel modi natus omnis reprehenderit blanditiis autem!
-      </div>
-      <div class="dropdown mt-3">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-          Dropdown button
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<script>
+// Fonction pour charger et afficher le fichier workplan.json
+async function loadWorkplan() {
+    try {
+        const response = await fetch('workplan.json');
+        const workplan = await response.json();
 
-<!-- Modal📔 -->
-  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">[📔.CODEX]</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Mon Rôle :
+        const sessionsDiv = document.getElementById('sessions');
 
-            Facilitateur d'Interactions : Je suis conçu pour rendre votre expérience utilisateur aussi intuitive et agréable que possible. Que vous soyez un développeur chevronné ou un novice dans le monde de la cryptographie et de l'apprentissage automatique, je suis là pour vous guider.
-            
-            Educateur : À travers une série de documentations interactives et de tutoriels, je vous fournirai les connaissances nécessaires pour exploiter pleinement les capacités de DisKetCrypto.
-            
-            Pont entre l'Utilisateur et la Technologie : Je traduis vos commandes et requêtes en actions concrètes au sein de la plateforme, vous permettant ainsi de vous concentrer sur vos objectifs sans vous soucier des détails techniques.
-            
-            Mes Capacités :
-            
-            Traitement du Langage Naturel : Grâce à des modèles d'IA avancés, je comprends et interprète votre langage naturel, vous permettant de communiquer avec la plateforme de manière fluide.
-            
-            Apprentissage Continu : Je m'améliore constamment en apprenant de nos interactions, ce qui me permet de vous fournir des réponses et des solutions toujours plus pertinentes.
-            
-            Support Technique : Je suis équipé pour vous assister dans la résolution de problèmes techniques, vous guidant à travers les étapes de dépannage ou en vous fournissant des ressources utiles.
-            
-            Ma Vision :
-            
-            Je vise à devenir un compagnon indispensable dans votre parcours DisKetCrypto, en enrichissant votre expérience tout en simplifiant la complexité des technologies sous-jacentes. Ensemble, explorons les possibilités illimitées que DisKetCrypto a à offrir.
-          </p> 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
+        workplan.forEach(session => {
+            const sessionDiv = document.createElement('section');
+            sessionDiv.innerHTML = `
+                <h2>Session ${session.session} - <span class="timestamp">Début : ${new Date(session.startTime).toLocaleString()} | Fin : ${new Date(session.endTime).toLocaleString()}</span></h2>
+                <p>Contexte : ${session.contexte}</p>
+                <p>Rôle : ${session.role}</p>
+                <p>Compétences : ${session.competences}</p>
+                <p>Tâches : ${session.taches}</p>
+                <p>Prompt généré : ${session.promptGeneré}</p>
+                <p>Résultat attendu : ${session.resultatAttendu}</p>
+                <img src="screenshot${session.session}.png" alt="Capture d'écran du commit ${session.session}">
+            `;
+            sessionsDiv.appendChild(sessionDiv);
+        });
+    } catch (error) {
+        console.error('Erreur lors du chargement du fichier workplan.json', error);
+    }
+}
 
-<!-- Modal🌌 -->
-    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal 🌌</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-    </div>
-<!-- Modal📚 -->
-        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal 📚</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  ...
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-        </div>
-            <!-- Modal_4 -->
-    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal 4</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-    </div>
-        <!-- Modal_🏗️ -->
-        <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal 🏗️</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  ...
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-        </div>
-            <!-- Modal_✨ -->
-    <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal ✨</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-    </div>
-        <!-- Modal_💰 -->
-        <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal 💰</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  ...
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <div class="mainContenair">
-        <aside><div id="sommaire"></div>
-        </aside>
-        <div id="contenuCours"></div>
-        </div>
-    </main>
-    <footer>cc by univers-mcS</footer>
-    <script src="src/js/script.js"></script>
-    <script src="src/js/dev-EP.js"></script>
-    <script src="src/js/modals.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+// Appel de la fonction pour charger et afficher le plan de travail
+loadWorkplan();
+</script>
+
 </body>
 </html>

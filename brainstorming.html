@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessions de Brainstorming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        section {
+            margin-bottom: 60px;
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .timestamp {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sessions de Brainstorming - Intent.json</h1>
+    <p>Bienvenue sur la page dédiée à mes différentes sessions de brainstorming. Chaque session est chronométrée et documentée avec un lien vers les commits GitHub.</p>
+</header>
+
+<section id="session1">
+    <h2>Session 1 - <span class="timestamp" id="session1-time"></span></h2>
+    <p>Description détaillée de la première session de brainstorming : Nous avons discuté des intentions pour le fichier intent.json, les objectifs et les cas d'utilisation.</p>
+    <p><a href="https://github.com/ton-repo/commit1">Voir le commit GitHub</a></p>
+    <img src="screenshot1.png" alt="Capture d'écran du commit 1">
+</section>
+
+<section id="session2">
+    <h2>Session 2 - <span class="timestamp" id="session2-time"></span></h2>
+    <p>Description détaillée de la deuxième session : Développement des idées initiales, avec des exemples d'intentions à ajouter dans intent.json.</p>
+    <p><a href="https://github.com/ton-repo/commit2">Voir le commit GitHub</a></p>
+    <img src="screenshot2.png" alt="Capture d'écran du commit 2">
+</section>
+
+<section id="session3">
+    <h2>Session 3 - <span class="timestamp" id="session3-time"></span></h2>
+    <p>Description détaillée de la troisième session : Finalisation des intentions et préparation du fichier pour les tests.</p>
+    <p><a href="https://github.com/ton-repo/commit3">Voir le commit GitHub</a></p>
+    <img src="screenshot3.png" alt="Capture d'écran du commit 3">
+</section>
+
+<section id="session4">
+    <h2>Session 4 - <span class="timestamp" id="session4-time"></span></h2>
+    <p>Description détaillée de la quatrième session : Revue des résultats des tests et ajustement des intentions.</p>
+    <p><a href="https://github.com/ton-repo/commit4">Voir le commit GitHub</a></p>
+    <img src="screenshot4.png" alt="Capture d'écran du commit 4">
+</section>
+
+<section id="session5">
+    <h2>Session 5 - <span class="timestamp" id="session5-time"></span></h2>
+    <p>Description détaillée de la cinquième session : Discussion finale et validation des modifications apportées.</p>
+    <p><a href="https://github.com/ton-repo/commit5">Voir le commit GitHub</a></p>
+    <img src="screenshot5.png" alt="Capture d'écran du commit 5">
+</section>
+
+<footer>
+    <h2>Me Contacter</h2>
+    <div class="social-links">
+        <a href="https://www.facebook.com/ton-profil">Facebook</a> |
+        <a href="https://www.youtube.com/ton-profil">YouTube</a> |
+        <a href="https://www.google.com/ton-profil">Google</a> |
+        <a href="https://www.linkedin.com/in/ton-profil">LinkedIn</a>
+    </div>
+</footer>
+
+<script>
+    // Script pour initier les sessions avec horodatage et décalage d'une heure
+    function formatTime(date) {
+        return date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+    }
+
+    function initSession(id, startTime, durationHours = 1) {
+        // Calcule l'heure de fin de session
+        const endTime = new Date(startTime.getTime() + durationHours * 60 * 60 * 1000);
+        // Formatte et affiche l'heure de début et l'heure de fin
+        document.getElementById(id).textContent = `Début : ${formatTime(startTime)} | Fin : ${formatTime(endTime)}`;
+    }
+
+    // Heure de début de la première session (maintenant)
+    const now = new Date();
+
+    // Initialisation des horodatages pour chaque session avec un décalage d'une heure entre chaque session
+    initSession("session1-time", now);
+    initSession("session2-time", new Date(now.getTime() + 1 * 60 * 60 * 1000)); // 1 heure après la session 1
+    initSession("session3-time", new Date(now.getTime() + 2 * 60 * 60 * 1000)); // 2 heures après la session 1
+    initSession("session4-time", new Date(now.getTime() + 3 * 60 * 60 * 1000)); // 3 heures après la session 1
+    initSession("session5-time", new Date(now.getTime() + 4 * 60 * 60 * 1000)); // 4 heures après la session 1
+</script>
+
+</body>
+</html>
